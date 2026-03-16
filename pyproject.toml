@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=64", "setuptools_scm"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "safety_braking_distance_estimation"
+version = "0.1.1"
+description = "Braking Distance estimation toycase for cesna"
+readme = "README.md"
+authors = [
+    {email ="melanie.ducoffe@airbus.com"},
+]
+requires-python = ">=3.9"
+dependencies =[
+    "numpy",
+    "scipy"
+]
+
+#dynamic = ["version"]
+
+
+[project.urls]
+repository = "https://github.com/ducoffeM/safety_braking_distance_estimation"
