@@ -18,14 +18,6 @@ This repository specifically targets the **Cessna 172 Skyhawk**, the most succes
 
 ---
 
-## ✨ Features
-
-* **Neural Network Architectures:** Pre-configured models optimized for braking dynamics.
-* **Safety Verification:** Scripts to test model robustness against edge-case flight conditions.
-* **Cessna 172 Dynamics:** A dedicated data generation engine tailored to the Skyhawk's performance profile.
-
----
-
 ## 🛠️ Installation
 
 This project uses `pyproject.toml` for modern dependency management.
@@ -66,7 +58,3 @@ print(f"Generated {len(X)} samples for Cessna 172 braking analysis.")
 
 ```
 
-
-## License
-
-[Insert License Type, e.g., MIT]
