@@ -77,7 +77,7 @@ def cesna_landing(temp, pres_alt):
     # return f1(pres_alt,temp)[0], f2(pres_alt, temp)[0]
     return f2(pres_alt, temp)[0]
 
-def generate_dataset(N, MIN=[MIN_temp, MIN_alt], MAX=[MAX_temp, MAX_alt]):
+def generate_dataset(N, MIN, MAX):
     alpha_temp = np.array([np.random.rand() for _ in range(N)])
     alpha_alt = np.array([np.random.rand() for _ in range(N)])
 
