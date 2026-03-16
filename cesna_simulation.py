@@ -76,3 +76,15 @@ def cesna_landing(temp, pres_alt):
     pres_alt = pres_alt if pres_alt >= 0 else 0.0
     # return f1(pres_alt,temp)[0], f2(pres_alt, temp)[0]
     return f2(pres_alt, temp)[0]
+
+def generate_dataset(N, MIN=[MIN_temp, MIN_alt], MAX=[MAX_temp, MAX_alt]):
+    alpha_temp = np.array([np.random.rand() for _ in range(N)])
+    alpha_alt = np.array([np.random.rand() for _ in range(N)])
+
+    X = np.zeros((N, 2))
+    X[:, 0] = alpha_temp * MIN[0] + (1 - alpha_temp) * MAX[0]
+    X[:, 1] = alpha_alt * MIN[1] + (1 - alpha_alt) * MAX[1]
+
+    Y = [cesna_landing(X[i, 0], X[i, 1]) for i in range(N)]
+
+    return X, np.array(Y)  # samples, associated landing distance
