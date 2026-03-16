@@ -1,8 +1,7 @@
 # bla bla bla
 import numpy as np
 import scipy
-from scipy import interpolate
-
+from scipy.interpolate import RegularGridInterpolator
 
 def cesna_landing(temp, pres_alt):
     table_ldg = np.array(
@@ -70,8 +69,9 @@ def cesna_landing(temp, pres_alt):
 
     z1 = np.asarray([table_ldg[i, :, 2] for i in range(5)])
     z2 = np.asarray([table_ldg[i, :, 3] for i in range(5)])
-    f1 = interpolate.interp2d(x, y, z1, kind="linear")
-    f2 = interpolate.interp2d(x, y, z2, kind="linear")
+
+    f1 = RegularGridInterpolator((x, y), z1, method="linear")
+    f2 = RegularGridInterpolator((x, y), z2, method="linear")
 
     pres_alt = pres_alt if pres_alt >= 0 else 0.0
     # return f1(pres_alt,temp)[0], f2(pres_alt, temp)[0]
